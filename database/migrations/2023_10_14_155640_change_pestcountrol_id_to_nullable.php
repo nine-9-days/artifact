@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('plants', function (Blueprint $table) {
-            $table->integer('int', 10);
-            $table->string('name',30);
-            $table->string('species', 50);
+        
+        Schema::disableForeignKeyConstraints();
+        Schema::table('counterplans', function (Blueprint $table) {
+            $table->string('pestcontrol_id')->nullable(true)->change();
         });
+        
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -27,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plants');
+        Schema::table('counterplans', function (Blueprint $table) {
+            $table->string('pestcontrol_id')->nullable(false)->change();
+        });
     }
 };
