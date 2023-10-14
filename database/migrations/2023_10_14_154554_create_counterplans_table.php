@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('counterplans', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name',50);
+            $table->string('feature',50);
+            $table->foreignId('pestcontrol_id')->constrained('pestcontrols');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('counterplans');
     }
 };

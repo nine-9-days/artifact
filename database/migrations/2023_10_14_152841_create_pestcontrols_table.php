@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('plants', function (Blueprint $table) {
-            $table->integer('id')->change();
+        Schema::create('pestcontrols', function (Blueprint $table) {
+            $table->id();
+            $table->string('name',50);
+            $table->string('method',50);
         });
     }
 
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('plants', function (Blueprint $table) {
-            $table->bigint('id')->change();
-        });
+        Schema::dropIfExists('pestcontrols');
     }
 };
