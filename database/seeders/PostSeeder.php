@@ -20,11 +20,6 @@ class PostSeeder extends Seeder
             'species' => 'ナス科',
         ]);
         
-        DB::table('diseases')->insert([
-            'name'=> '黄化葉巻病',
-            'feature'=>'縁が黄色くなっている',
-        ]);
-            
         DB::table('counterplans')->insert([
             'name'=>'株の廃棄',
             'feature'=>'病気株の廃棄',
