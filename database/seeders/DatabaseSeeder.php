@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         //$this->call(DiseaseSeeder::class);
         //$this->call(CounterplanSeeder::class);
         //$this->call(PestcontrolSeeder::class);
+        //$this->call(FeatureSeeder::class);
     }
 }
