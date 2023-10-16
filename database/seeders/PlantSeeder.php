@@ -15,6 +15,13 @@ class PlantSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('plants')->delete();
+        
+        DB::table('plants')->insert([
+            'name' => 'トマト',
+            'species' => 'ナス科',
+        ]);
+        
         DB::table('plants')->insert([
             'name' => 'キャベツ',
             'species' => 'アブラナ科',
