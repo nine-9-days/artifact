@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PostSeeder extends Seeder
+class disease_plant_Seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,13 +15,14 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        $parts = array('葉','茎','根','果実');
+        $count = 1;
         
-        foreach($parts as $part){
-            DB::table('parts')->insert([
-                'name'=>$part,
+        while ($count<30){
+            DB::table('disease_plant')->insert([
+                'plant_id' => 1,
+                'disease_id' => $count,
             ]);
+            $count++;
         }
-        
     }
 }
