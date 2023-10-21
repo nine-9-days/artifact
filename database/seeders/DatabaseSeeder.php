@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //$this->call(PostSeeder::class);
-        //$this->call(PlantSeeder::class);
-        //$this->call(DiseaseSeeder::class);
-        //$this->call(CounterplanSeeder::class);
-        //$this->call(PestcontrolSeeder::class);
-        //$this->call(FeatureSeeder::class);
+        $this->call(PlantSeeder::class);
+        $this->call(DiseaseSeeder::class);
+        $this->call(CounterplanSeeder::class);
+        $this->call(PestcontrolSeeder::class);
+        $this->call(FeatureSeeder::class);
     }
 }
