@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('counterplans', function (Blueprint $table) {
+        Schema::create('feature_part', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-            $table->string('feature',50);
-            $table->foreignId('pestcontrol_id')->nullable()->constrained('pestcontrols');
+            $table->foreignId('part_id')->nullable(true)->constrained('parts');
+            $table->foreignId('feature_id')->nullable(true)->constrained('features');
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('counterplans');
+        Schema::dropIfExists('feature_part');
     }
 };

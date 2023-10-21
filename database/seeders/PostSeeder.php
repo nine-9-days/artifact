@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
     public function run()
     {
         $parts = array('葉','茎','根','果実');
-        
+ 
         foreach($parts as $part){
             DB::table('parts')->insert([
                 'name'=>$part,
