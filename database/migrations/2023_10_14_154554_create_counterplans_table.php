@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',50);
             $table->string('feature',50);
-            $table->foreignId('pestcontrol_id')->constrained('pestcontrols');
+            $table->foreignId('pestcontrol_id')->nullable()->constrained('pestcontrols');
         });
     }
 

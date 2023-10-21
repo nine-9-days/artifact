@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('feature_part', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('part_id')->nullable(true);
-            $table->foreignId('feature_id')->nullable(true);
+            $table->foreignId('part_id')->nullable(true)->constrained('parts');
+            $table->foreignId('feature_id')->nullable(true)->constrained('features');
         });
     }
 
