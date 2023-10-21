@@ -15,13 +15,10 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
+            $table->string('name',50);
             $table->string('feature',50);
         });
         
-        Schema::rename('disease_part','feature_part');
-        Schema::table('feature_part', function (Blueprint $table) {
-            $table->rename('disease_id','feature_id');
-        });
     }
 
     /**
@@ -32,9 +29,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('features');
-        Schema::rename('feature_part','disease_part');
-        Schema::table('feature_part', function (Blueprint $table) {
-            $table->rename('feature_id','disease_id');
-        });
     }
 };
