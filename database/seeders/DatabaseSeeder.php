@@ -20,8 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(feature_part_Seeder::class);
         //$this->call(PlantSeeder::class);
         //$this->call(DiseaseSeeder::class);
-        //$this->call(PestcontrolSeeder::class);
-        //$this->call(CounterplanSeeder::class);
-        //this->call(FeatureSeeder::class);
+       // $this->call(PestcontrolSeeder::class);
+       // $this->call(CounterplanSeeder::class);
+        //$this->call(FeatureSeeder::class);
+        //$this->call(PartSeeder::class);
+        $this->call(disease_plant_Seeder::class);
     }
 }
