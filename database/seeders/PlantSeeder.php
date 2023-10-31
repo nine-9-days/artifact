@@ -36,11 +36,6 @@ class PlantSeeder extends Seeder
         ]);
         
         DB::table('plants')->insert([
-            'name' => 'キャベツ',
-            'species' => 'アブラナ科',
-        ]);
-        
-        DB::table('plants')->insert([
             'name' => 'さといも',
             'species' => 'サトイモ科',
         ]);

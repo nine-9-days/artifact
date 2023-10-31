@@ -3,6 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PlantController;
+use App\Http\Controllers\DiseaseController;
+use App\Http\Controllers\PestcontrolController;
+use App\Http\Controllers\CounterplanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::get('/plant', [PlantController::class, 'plant'])->middleware('auth');
 Route::get('/', [PostController::class, 'index'])->name('index')->middleware('auth');
+Route::get('/disease/{plant}', [DiseaseController::class, 'disease'])->middleware('auth');
+Route::get('/diagnosis/{plant}', [PlantController::class, 'diagnosis'])->middleware('auth');
+Route::get('/pestcontrol/{plant}', [PestcontrollerController::class, 'counterplan'])->middleware('auth');
+Route::get('/counterplan/{plant}/{disease}', [CounterplanController::class, 'pestcontrol'])->middleware('auth');
+
 
 require __DIR__.'/auth.php';
