@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class PestcontrolController extends Controller
 {
-    public function pestcountol(Pestcountol $disease)
+    public function pestcontrol(Pestcontrol $disease)
     {
-        return view('posts.pestcountol')->with(['pestcountols'=>$pestcountol]);
+        return view('posts.pestcontrol')->with(['pestcontrols'=>$pestcontrol]);
     }
 }
