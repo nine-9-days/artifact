@@ -34,10 +34,10 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/plant', [PlantController::class, 'plant'])->middleware('auth');
 Route::get('/', [PostController::class, 'index'])->name('index')->middleware('auth');
-Route::get('/disease/{plant}', [DiseaseController::class, 'disease'])->middleware('auth');
+Route::get('/disease/{plant}', [PlantController::class, 'disease'])->middleware('auth');
 Route::get('/diagnosis/{plant}', [PlantController::class, 'diagnosis'])->middleware('auth');
-Route::get('/pestcontrol/{plant}', [PestcontrollerController::class, 'counterplan'])->middleware('auth');
-Route::get('/counterplan/{plant}/{disease}', [CounterplanController::class, 'pestcontrol'])->middleware('auth');
+Route::get('/pestcontrol/{plant}', [PestcontrolController::class, 'pestcontrol'])->middleware('auth');
+Route::get('/counterplan/{plant}/{disease}', [DiseaseController::class, 'counterplan'])->middleware('auth');
 
 
 require __DIR__.'/auth.php';

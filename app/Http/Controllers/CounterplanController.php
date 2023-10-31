@@ -9,6 +9,6 @@ class CounterplanController extends Controller
 {
     public function counterplan(Counterplan $counterplan)
     {
-        return view('posts.counterplan')->with(['counterplans'=>$counterplan]);
+        return view('posts.counterplan')->with(['counterplans'=>$counterplan->get()]);
     }
 }

@@ -11,9 +11,9 @@ class Plant extends Model
 {
     use Hasfactory;
     
-    public function disease()   
+    public function diseases()   
     {
-        return $this->hasMany(Disease::class);  
+        return $this->belongsToMany(Disease::class);  
     }
     
     public function nameBy()

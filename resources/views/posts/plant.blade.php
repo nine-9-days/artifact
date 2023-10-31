@@ -26,7 +26,7 @@
         ?>    
             @foreach ($plants as $plant)
                 <div class='plant'>
-                    <h2 class='name'><a href='/counterplan/{{$plant->id}}'>{{ $plant->name }}</a></h2>
+                    <h2 class='name'><a href='/disease/{{$plant->id}}'>{{ $plant->name }}</a></h2>
                 </div>
             @endforeach
         <?php
